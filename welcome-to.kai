@@ -49,5 +49,11 @@ fn main
 	# BUT cannot print anything after the function
 	# is called
 
+	# For/While
+	b = 12
+	for b < 1200 # For/While are the same syntactically
+		p b
+		b = b * 5
+
 fn myFunction x y
 	x + y # This will NOT output unless printed when calling the function
