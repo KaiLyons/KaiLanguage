@@ -1,0 +1,11 @@
+p 0
+p 1
+a = 1
+b = a + a
+p a
+p b
+for a < 1000000
+  a = a + b
+  b = a + b
+  p a
+  p b
