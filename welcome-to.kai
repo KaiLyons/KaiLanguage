@@ -1,0 +1,53 @@
+# Kai Language | Kai | welcome-to.kai
+p "Welcome to Kai Language"
+p "Kai language tries to be the least typed language"
+p "Made by KaiLikesLinux.io"
+# Below is all the things you need to know when writing Kai code
+fn main
+	# The main function is optional
+	# but will auto run when the application is ran
+
+	p "Let's do some MATH!!"
+
+	one_plus_one = 1 + 1  # This is a variable
+						  # This also could be called onePlusOne
+
+	p one_plus_one		  # This prints the variable
+
+	
+	p "Let's mix strings with numbers and variables"
+
+	string_var = "some string"
+	int_var = 0 
+	bool_var = true # True/False are all lowercase 
+					# uppercase T in true would be invalid
+
+	p 0
+	p true 			# Yes, you CAN output booleans
+	p "string"
+
+	p "Remember those variables?"
+	p "string_var " string_var
+	p "int_var " int_var
+	p "bool_var " bool_var
+	
+
+	# Statements and loops
+	a = 0
+	if a < 1000
+		p a
+		a++
+	elif a > 1000
+		p a
+		a = a * 2 # Variables are always mutable
+	else
+		p "idk what else to do"	
+
+	# Functions
+	p "myFunction: " myFunction 23 52  
+	# Functions can be called like variables
+	# BUT cannot print anything after the function
+	# is called
+
+fn myFunction x y
+	x + y # This will NOT output unless printed when calling the function
