@@ -51,7 +51,7 @@ fn main
 
 	# For/While
 	b = 12
-	for b < 1200 # For/While are the same syntactically
+	f b < 1200 # For/While are the same syntactically
 		p b
 		b = b * 5
 
