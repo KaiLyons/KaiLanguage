@@ -5,7 +5,7 @@ b = a + a
 p a
 p b
 for a < 1000000
-  a = a + b
-  b = a + b
-  p a
-  p b
+    a = a + b
+    b = a + b
+    p a
+    p b
