@@ -7,6 +7,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <algorithm>
 using namespace std;
 
 bool fileExt(string const &filename){
@@ -18,20 +19,10 @@ bool fileExt(string const &filename){
     }
 }
 
-/* bool keywordCheck(string const &line, string const &keyword){
-    if(line.length() > keyword.length()){
-        return (0 == line.compare(line.length(), keyword.length(), keyword));
-    } else {
-        return false;
-    }
-    
-} */
-
 int main(){
     // Variables are set here:
     string line;
     string filename;
-    int index = 0;
     // This part is temporary (for testing purposes)
     cout << "Enter file name: ";
     cin >> filename;
@@ -49,14 +40,15 @@ int main(){
     if (kaicode.is_open()){
         while (getline (kaicode, line)){
             cout << line << endl;
+            line.erase(remove(line.begin(), line.end(), ' '), line.end());
             // Check to find a "p" keyword (the keyword for print)
-            if(line.rfind("p", 0) == 0 || line.rfind(" p", 0) == 0){
+            if(line.rfind("p", 0) == 0){
                 cout << "found \"p\" keyword" << endl;
             } else {
                 cout << "";
             }
             // Check to find a "f" keyword (the keyword for for loops)
-            if(line.rfind("f", 0) == 0 || line.rfind(" f", 0) == 0){ 
+            if(line.rfind("f", 0) == 0){ 
                 cout << "found \"f\" keyword" << endl;
             } else {
                 cout << "";
