@@ -28,15 +28,12 @@ int main(){
     cin >> filename;
 
     // Check File Type
-    cout << fileExt(filename) << endl;
-    
-    // Come back to later:
-    /*
-    if (){
+    if (!fileExt(filename)){
         cout << "Wrong file type" << endl;
         return 1;
+    } else {
+        cout << "Correct File : " << fileExt(filename) << endl;
     }
-    */
 
     // Open file
     ifstream kaicode (filename);
