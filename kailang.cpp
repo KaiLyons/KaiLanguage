@@ -39,11 +39,14 @@ int main(){
     ifstream kaicode (filename);
     if (kaicode.is_open()){
         while (getline (kaicode, line)){
-            cout << line << endl;
             line.erase(remove(line.begin(), line.end(), ' '), line.end());
             // Check to find a "p" keyword (the keyword for print)
             if(line.rfind("p", 0) == 0){
-                cout << "found \"p\" keyword" << endl;
+                if(line.find("\"")){
+                    line.erase(remove(line.begin(), line.end(), 'p'), line.end());
+                    line.erase(remove(line.begin(), line.end(), '\"'), line.end());
+                    cout << line << endl;
+                }
             } else {
                 cout << "";
             }
