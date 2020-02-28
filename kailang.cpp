@@ -91,14 +91,10 @@ int main(){
             // Check to find a "p" keyword (the keyword for print)
             if(line.rfind("p", 0) == 0){
                 pToken(line);
-            } else {
-                cout << "";
             }
             // Check to find a "f" keyword (the keyword for for loops)
             if(line.rfind("f", 0) == 0){ 
                 fToken(line);
-            } else {
-                cout << "";
             }
             // Check to find a "v" keyword (the keyword for variables)
             if(line.rfind("v", 0) == 0){
