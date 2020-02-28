@@ -7,6 +7,17 @@ ARGV.each do |key|
     end
 end
 
+def forloops(line)
+    puts line
+end
+
+def variable(line)
+    line = line.split("v", remove_empty: true)
+    line = line.join(",")
+    line = line.lstrip()
+    puts line
+end
+
 def print(line)
     line = line.split("p", remove_empty: true)
     line = line.join(",")
@@ -21,10 +32,10 @@ def main (filename)
             print line
         end
         if line.starts_with?("f")
-            puts "Found for/while loop"
+            forloops line
         end
         if line.starts_with?("v")
-            puts "found variable"
+            variable line
         end
         if line.starts_with?("e")
             puts "found end"
