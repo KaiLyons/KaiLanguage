@@ -40,6 +40,9 @@ void fnToken(){
 }
 */
 
+/***************************************
+ Functions that control everything else
+***************************************/
 // Find the extention of the file
 bool fileExt(string const &filename){
     string ext = ".kai";
@@ -70,7 +73,7 @@ int main(){
     ifstream kaicode (filename);
     if (kaicode.is_open()){
         while (getline (kaicode, line)){
-            // Remove whitespace
+            // Remove whitespace - Might cause issues
             while (line.rfind(" ", 0) == 0){
                 line.erase(0,1);
             }
