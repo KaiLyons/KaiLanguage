@@ -40,7 +40,6 @@ int main(){
     ifstream kaicode (filename);
     if (kaicode.is_open()){
         while (getline (kaicode, line)){
-            trim(line);
             // line.erase(remove(line.begin(), line.begin(), ' '), line.begin());
             while (line.rfind(" ", 0) == 0){
                 line.erase(0,1);
