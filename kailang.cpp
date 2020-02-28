@@ -12,8 +12,14 @@ using namespace std;
 
 // Global Variables
 string tokens[] = {"f", "p", "fn", "v"};
-string variables[] = {};
-string varValues[] = {};
+
+// Variable Variables
+string strVariables[] = {};
+string strVarValues[] = {};
+int intVariables[] = {};
+int intVarValues[] = {};
+bool boolVariables[] = {};
+bool voolVarValues[] = {};
 
 /********************
  Variable Management
@@ -25,7 +31,7 @@ void createVar(string &line){
 /***********************
  Functions for Keywords
 ***********************/
-// p token (print)
+// Print Token
 void pToken(string &line){
     if(line.find("\"")){
         line.erase(remove(line.begin(), line.end(), 'p'), line.end());
@@ -37,10 +43,12 @@ void pToken(string &line){
     }
 }
 
+// For Loop Token
 void fToken(string &line){
     cout << line << endl;
 }
 
+// Variable Token
 void vToken(string &line){
     cout << line << endl;
 }
