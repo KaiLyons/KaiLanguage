@@ -8,6 +8,7 @@ ARGV.each do |key|
 end
 
 def main (filename)
-    file = File.read filename
-    puts file
+    File.each_line filename do |line|
+        puts line
+    end
 end
