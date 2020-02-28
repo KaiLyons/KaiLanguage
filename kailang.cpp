@@ -11,13 +11,20 @@
 using namespace std;
 
 // Global Variables
-string tokens[] = {};
+string tokens[] = {"f", "p", "fn", "v"};
 string variables[] = {};
 string varValues[] = {};
 
-/************************
+/********************
+ Variable Management
+********************/
+void createVar(string &line){
+    cout << line << endl;
+}
+
+/***********************
  Functions for Keywords
-************************/
+***********************/
 // p token (print)
 void pToken(string &line){
     if(line.find("\"")){
@@ -30,8 +37,12 @@ void pToken(string &line){
     }
 }
 
-void fToken(){
-    cout << "for loop token \"f\" " << endl;
+void fToken(string &line){
+    cout << line << endl;
+}
+
+void vToken(string &line){
+    cout << line << endl;
 }
 
 /* The Upcoming Function Token
@@ -85,9 +96,13 @@ int main(){
             }
             // Check to find a "f" keyword (the keyword for for loops)
             if(line.rfind("f", 0) == 0){ 
-                cout << line << endl;
+                fToken(line);
             } else {
                 cout << "";
+            }
+            // Check to find a "v" keyword (the keyword for variables)
+            if(line.rfind("v", 0) == 0){
+                vToken(line);
             }
         }
     }
