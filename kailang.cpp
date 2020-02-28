@@ -28,6 +28,10 @@ void createVar(string &line){
     cout << line << endl;
 }
 
+void modifyVar(string &line){
+    cout << line << endl;
+}
+
 /***********************
  Functions for Keywords
 ***********************/
