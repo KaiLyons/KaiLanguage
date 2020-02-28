@@ -1,11 +1,11 @@
 p 0
 p 1
-a = 1
-b = a + a
+v a = 1
+v b = a + a
 p a
 p b
 f a < 1000000
-  a = a + b
-  b = a + b
+  v a = a + b
+  v b = a + b
   p a
   p b
