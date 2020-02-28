@@ -10,6 +10,36 @@
 #include <algorithm>
 using namespace std;
 
+// Global Variables
+string tokens[] = {};
+string variables[] = {};
+string varValues[] = {};
+
+/************************
+ Functions for Keywords
+************************/
+// p token (print)
+void pToken(string &line){
+    if(line.find("\"")){
+        line.erase(remove(line.begin(), line.end(), 'p'), line.end());
+        if (line.rfind(" ", 0) == 0){
+            line.erase(0,1);
+        }
+        line.erase(remove(line.begin(), line.end(), '\"'), line.end());
+        cout << line << endl;
+    }
+}
+
+void fToken(){
+    cout << "for loop token \"f\" " << endl;
+}
+
+/* The Upcoming Function Token
+void fnToken(){
+
+}
+*/
+
 // Find the extention of the file
 bool fileExt(string const &filename){
     string ext = ".kai";
@@ -40,26 +70,19 @@ int main(){
     ifstream kaicode (filename);
     if (kaicode.is_open()){
         while (getline (kaicode, line)){
-            // line.erase(remove(line.begin(), line.begin(), ' '), line.begin());
+            // Remove whitespace
             while (line.rfind(" ", 0) == 0){
                 line.erase(0,1);
             }
             // Check to find a "p" keyword (the keyword for print)
             if(line.rfind("p", 0) == 0){
-                if(line.find("\"")){
-                    line.erase(remove(line.begin(), line.end(), 'p'), line.end());
-                    if (line.rfind(" ", 0) == 0){
-                        line.erase(0,1);
-                    }
-                    line.erase(remove(line.begin(), line.end(), '\"'), line.end());
-                    cout << line << endl;
-                }
+                pToken(line);
             } else {
                 cout << "";
             }
             // Check to find a "f" keyword (the keyword for for loops)
             if(line.rfind("f", 0) == 0){ 
-                cout << "found \"f\" keyword" << endl;
+                cout << line << endl;
             } else {
                 cout << "";
             }
